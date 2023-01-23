@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p8_layoutweb</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0.5em;
+        }
+        .container{
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            row-gap: 0.5em;
+            column-gap: 0.5em;
+            grid-template-columns: auto auto auto auto auto; 
+            grid-template-rows: 12.5% 25% 50% 12.5%; 
+        }
+        nav{
+            grid-column-start: 1;
+            grid-column-end: 7;
+            background-color: brown;
+        }
+        header{
+            grid-column: 1 / 7;
+            background-color: cadetblue;
+        }
+        main{
+            grid-column: 1 / 6;
+            background-color: cornflowerblue;
+        }
+        aside{
+            grid-column: 6 / 7;
+            background-color: darksalmon;
+        }
+        footer{
+            grid-column: 1 / 7;
+            background-color: darkgoldenrod;
+        }
+        /*IPAD*/
+        @media only screen and (max-width:834px) {
+                .container{
+                    grid-template-columns: auto auto auto auto auto;
+                    grid-template-rows: 6.66%, 26.64%, 33.3%, 13.32%, 19,98%; 
+                }
+                nav, main, header, aside, footer{
+                    grid-column: 1/5;   
+                }
+                main{
+                    background-color: blue;
+                }
+        }
+        /*IPHONE 8*/
+        @media only screen and (max-width:375px){
+                .container{
+                    grid-template-columns: auto auto;
+                    grid-template-rows: 10%, 50%, 20%, 10%, 10%; 
+                }
+                nav, main, header, aside, footer{
+                    grid-column: 1/2;  
+                 }
+                 main{
+                    background-color: green;
+                }
+        }
+    </style>
+
+</head>
+<body>
+   <div class="container">
+        <nav>
+            <p>Menú nav</p>
+        </nav> 
+        <header>
+            <p>Header</p>
+        </header>
+        <main>
+            <p>Main content</p>
+        </main>
+        <aside>
+            <p>aside</p>
+        </aside>
+        <footer>
+            <p>footer</p>
+        </footer>
+    </div>
+</body>
+</html>
